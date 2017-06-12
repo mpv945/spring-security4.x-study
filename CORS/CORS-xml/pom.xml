@@ -1,0 +1,17 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>CORS</artifactId>
+        <groupId>org.lc.study.spring.security</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>CORS-xml</artifactId>
+    <packaging>war</packaging>
+    <name>CORS-xml</name>
+    <url>http://maven.apache.org</url>
+
+    <build>
+        <finalName>CORS-xml</finalName>
+    </build>
+</project>

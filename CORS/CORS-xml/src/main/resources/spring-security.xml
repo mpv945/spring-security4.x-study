@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <security:authentication-manager alias="authenticationManager"/>
+    <security:global-method-security secured-annotations="enabled"/>
+    <security:http>
+        <security:form-login/>
+        <security:logout/>
+        <security:cors configuration-source-ref="corsConfigurationSource"/>
+    </security:http>
+
+    <bean id="corsConfigurationSource" class="org.springframework.web.cors.UrlBasedCorsConfigurationSource">
+        <property name="corsConfigurations">
+            <map>
+                <entry key="/**" value-ref="corsConfiguration"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="corsConfiguration" class="org.springframework.web.cors.CorsConfiguration">
+        <property name="allowCredentials" value="true"/>
+        <property name="allowedOrigins">
+            <list>
+                <value>*</value>
+            </list>
+        </property>
+        <property name="allowedHeaders">
+            <list>
+                <value>*</value>
+            </list>
+        </property>
+        <property name="allowedMethods">
+            <list>
+                <value>*</value>
+            </list>
+        </property>
+    </bean>
+</beans>
